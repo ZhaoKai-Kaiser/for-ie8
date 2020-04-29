@@ -1,3 +1,11 @@
+/**
+ * @Author: Kaiser
+ * @Date: 2020-04-28 15:28:41
+ * @Last Modified by: Kaiser
+ * @Last Modified time: 2020-04-28 16:11:57
+ * @Description: 
+ */
+
 @mixin cf {
   &:before,
   &:after {
@@ -8,4 +16,22 @@
   &:after {
     clear: both;
   }
+}
+// 模块样式
+@mixin module {
+  display: block;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+// 模块样式 - 背景是图片
+@mixin module-color($color) {
+  @include module;
+  background: $color;
+}
+
+// 模块样式 - 背景是颜色
+@mixin module-image($url) {
+  @include module;
+  background: url($url) center center/100% 100%;
 }

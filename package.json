@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "React IE8 Webpack3 Example",
   "scripts": {
-    "dev": "webpack-dev-server --config webpack.config.dev.js",
-    "build": "webpack --config webpack.config.dist.js",
-    "deploy": "npm run build && cross-env PORT=8081 node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack-dev-server --config ./build/webpack.dev.config.js",
+    "build": "webpack --config ./build/webpack.prod.config.js",
+    "deploy": "npm run build && cross-env PORT=8081 node server.js"
   },
   "author": "shiyinghua <shiyinghua170914@credithc.com>",
   "license": "MIT",
@@ -26,8 +25,7 @@
     "react-redux": "4.4.0",
     "react-router": "1.0.3",
     "redux": "3.5.1",
-    "redux-thunk": "^2.3.0",
-    "webpack": "3.4.1"
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -46,10 +44,17 @@
     "es3ify-loader": "^0.2.0",
     "es3ify-webpack-plugin": "0.0.1",
     "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "1.1.4",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.9.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-url": "^8.0.0",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
-    "webpack-dev-server": "2.6.1"
+    "url-loader": "1.1.2",
+    "webpack": "3.4.1",
+    "webpack-dev-server": "2.6.1",
+    "webpack-merge": "^4.2.2"
   }
 }

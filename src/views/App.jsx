@@ -2,7 +2,7 @@ import React from 'react'
 import Header from './Header'
 
 const App = (props) => (
-  <div>
+  <div className="global-container">
     <Header location={props.location}/>
     <div className="wrap">
     {props.children}
