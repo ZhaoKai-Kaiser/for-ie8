@@ -2,7 +2,7 @@
  * @Author: Kaiser
  * @Date: 2020-04-28 15:28:41
  * @Last Modified by: Kaiser
- * @Last Modified time: 2020-04-29 11:39:19
+ * @Last Modified time: 2020-05-05 11:27:14
  * @Description:
  */
 const webpack = require('webpack');
@@ -11,9 +11,11 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const utils = require('./utils');
 const merge = require('webpack-merge');
 const baseWebpackConfig = require('./webpack.base.config');
+const es3ifyPlugin = require('es3ify-webpack-plugin');
 
 module.exports = merge(baseWebpackConfig, {
   plugins: [
+    new es3ifyPlugin(),
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify('production') },
     }),

@@ -2,11 +2,10 @@
  * @Author: Kaiser
  * @Date: 2020-04-28 15:28:41
  * @Last Modified by: Kaiser
- * @Last Modified time: 2020-04-29 11:12:32
+ * @Last Modified time: 2020-05-05 11:20:30
  * @Description:
  */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const es3ifyPlugin = require('es3ify-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const utils = require('./utils');
 
@@ -21,7 +20,8 @@ module.exports = {
     // 输出路径
     path: utils.resolve('dist'),
     // 文件命名规则
-    filename: utils.assetsPath('js/[name].[hash:8].js'),
+    // filename: utils.assetsPath('js/[name].[hash:8].js'),
+    filename: utils.assetsPath('js/[name].js'),
     publicPath: '/',
   },
   resolve: { extensions: ['.js', '.jsx'] },
@@ -44,7 +44,12 @@ module.exports = {
             // The css-loader interprets @import and url() like import/require() and will resolve them.
             {
               loader: 'css-loader',
-              options: { minimize: true },
+              options: {
+                minimize: true,
+                modules: true,
+                // This matches the babel plugin's setting (generateScopedName)
+                localIdentName: '[path]___[name]__[local]___[hash:base64:5]',
+              },
             },
             // Loader for webpack to process CSS with PostCSS
             'postcss-loader',
@@ -61,7 +66,8 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 8192,
-              name: utils.assetsPath('images/[name].[hash:7].[ext]'),
+              // name: utils.assetsPath('images/[name].[hash:7].[ext]'),
+              name: utils.assetsPath('images/[name].[ext]'),
             },
           },
         ],
@@ -74,9 +80,9 @@ module.exports = {
       filename: utils.resolve(`dist/index.html`),
       template: utils.resolve('index.html'),
     }),
-    new es3ifyPlugin(),
     new ExtractTextPlugin({
-      filename: utils.assetsPath('css/[name].[chunkhash].css'),
+      // filename: utils.assetsPath('css/[name].[chunkhash].css'),
+      filename: utils.assetsPath('css/[name].css'),
     }),
   ],
 };

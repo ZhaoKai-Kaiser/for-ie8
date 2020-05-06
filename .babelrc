@@ -1,21 +1,40 @@
 {
   "presets": [
-    ["env", {
-      "module": false,
-      "loose": true,
-      "targets": {
-        "browsers": [
-          "ie >= 8",
-          "Chrome >= 21",
-          "Firefox >= 1",
-          "Edge >= 13",
-          "last 3 versions"
-        ]
+    [
+      "env",
+      {
+        "module": false,
+        "loose": true,
+        "targets": {
+          "browsers": [
+            "ie >= 8",
+            "Chrome >= 21",
+            "Firefox >= 1",
+            "Edge >= 13",
+            "last 3 versions"
+          ]
+        }
       }
-    }],
+    ],
     "react"
   ],
   "plugins": [
-    "transform-object-rest-spread"
+    "transform-object-rest-spread",
+    [
+      "react-css-modules",
+      {
+        "context": "./",
+        "exclude": "node_modules",
+        "filetypes": {
+          ".scss": {
+            "syntax": "postcss-scss",
+            "plugins": [
+              "postcss-nested"
+            ]
+          }
+        },
+        "generateScopedName": "[path]___[name]__[local]___[hash:base64:5]"
+      }
+    ]
   ]
 }

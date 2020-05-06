@@ -1,23 +1,33 @@
-import React from 'react'
-import { Router, Route, IndexRoute } from 'react-router'
-import App from '../views/App'
-import About from '../views/About'
-import Index from '../views/Index'
-import Login from '../views/Login'
-import Demo from '../views/Demo'
-import NotFound from '../views/NotFound'
+/*
+ * @Author: Kaiser
+ * @Date: 2020-04-28 15:28:41
+ * @Last Modified by: Kaiser
+ * @Last Modified time: 2020-04-29 15:42:20
+ * @Description:
+ */
+import React from 'react';
+import { Router, Route, IndexRedirect, Redirect } from 'react-router';
+
+import App from '../views/App';
+
+import Index from '../views/Index';
+import Product from '../views/Product';
+import AboutUs from '../views/AboutUs';
+import JoinUs from '../views/JoinUs';
+import ContactUs from '../views/ContactUs';
 
 const routes = (
   <Router>
     <Route path="/" component={App}>
-      <IndexRoute component={Index} />
+      <IndexRedirect to="/index" />
       <Route path="index" component={Index} />
-      <Route path="about" component={About} />
-      <Route path="login" component={Login} />
-      <Route path="demo" component={Demo} />
+      <Route path="product" component={Product} />
+      <Route path="about_us" component={AboutUs} />
+      <Route path="join_us" component={JoinUs} />
+      <Route path="contact_us" component={ContactUs} />
     </Route>
-    <Route path="*" component={NotFound} />
+    <Redirect from="*" to="/" />
   </Router>
-)
+);
 
-export default routes
+export default routes;

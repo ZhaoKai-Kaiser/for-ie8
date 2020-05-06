@@ -1,0 +1,99 @@
+/**
+ * @Author: Kaiser
+ * @Date: 2020-04-29 15:44:23
+ * @Last Modified by: Kaiser
+ * @Last Modified time: 2020-05-05 19:15:57
+ * @Description: header模块
+ */
+@import './mixin.scss';
+
+.header {
+  user-select: none;
+  border-bottom: 1px solid rgb(240, 237, 237);
+  .center {
+    // 设置模块整体样式
+    @include module-color(#fff);
+    @include clear-float;
+    .logo {
+      float: left;
+      display: table-cell;
+      width: 200px;
+      height: 74px;
+      vertical-align: middle;
+      margin-right: 200px;
+      .icon {
+        display: inline-block;
+        width: 122px;
+        height: 24px;
+        line-height: 74px;
+        vertical-align: -4%;
+        background-image: url('../images/logo.png');
+        background-size: cover;
+      }
+      .name {
+        font-size: 24px;
+        line-height: 74px;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 1);
+        &::before {
+          display: inline-block;
+          content: '';
+          width: 1px;
+          height: 18px;
+          background: rgb(153, 153, 153);
+          margin: 0 10px 0 15px;
+        }
+      }
+    }
+    .navigater {
+      position: relative;
+      float: left;
+      overflow: hidden;
+      .navigater-item {
+        float: left;
+        height: 74px;
+        line-height: 74px;
+      }
+      a {
+        display: block;
+        color: #ccc;
+        padding: 0 40px;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        color: rgb(1, 1, 1);
+        &:focus {
+          border: none;
+          outline: none;
+        }
+      }
+      .bar {
+        will-change: left;
+        position: absolute;
+        transition: left 1s ease-in-out;
+        transition: width 0s;
+        bottom: -2px;
+        left: -33px;
+        width: 33px;
+        height: 5px;
+        background: rgba(177, 27, 26, 1);
+      }
+    }
+    .login {
+      float: right;
+      width: 70px;
+      height: 32px;
+      background: rgb(255, 255, 255);
+      border: 1px solid rgb(102, 102, 102);
+      text-align: center;
+      line-height: 32px;
+      margin: 21px 0;
+      cursor: pointer;
+      &:hover {
+        background: rgb(177, 27, 26);
+        border: 1px solid rgb(177, 27, 26);
+        color: rgb(255, 255, 255);
+      }
+    }
+  }
+}

@@ -6,7 +6,7 @@
  * @Description: 
  */
 
-@mixin cf {
+@mixin clear-float {
   &:before,
   &:after {
     display: table;
