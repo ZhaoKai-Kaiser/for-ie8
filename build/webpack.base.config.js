@@ -2,7 +2,7 @@
  * @Author: Kaiser
  * @Date: 2020-04-28 15:28:41
  * @Last Modified by: Kaiser
- * @Last Modified time: 2020-05-05 11:20:30
+ * @Last Modified time: 2020-05-06 19:26:45
  * @Description:
  */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -45,6 +45,7 @@ module.exports = {
             {
               loader: 'css-loader',
               options: {
+                importLoaders: 3,
                 minimize: true,
                 modules: true,
                 // This matches the babel plugin's setting (generateScopedName)
@@ -71,6 +72,15 @@ module.exports = {
             },
           },
         ],
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 1,
+          name: utils.assetsPath('fonts/[name].[ext]'),
+        },
         exclude: /node_modules/,
       },
     ],
