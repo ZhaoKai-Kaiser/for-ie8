@@ -1,0 +1,72 @@
+/**
+ * @Author: Kaiser
+ * @Date: 2020-04-29 15:44:23
+ * @Last Modified by: Kaiser
+ * @Last Modified time: 2020-05-06 15:25:07
+ * @Description: header模块
+ */
+@import './mixin.scss';
+
+.footer {
+  user-select: none;
+  .center {
+    // 设置模块整体样式
+    @include module-color(#fff);
+    @include clear-float;
+  }
+  .footer-top {
+    width: 1200px;
+    padding: 103px 0 46px 0;
+    border-bottom: 1px solid rgb(231, 231, 231);
+    .tel {
+      display: inline-block;
+      font-size: 24px;
+      font-weight: 400;
+      color: rgb(0, 0, 0);
+      line-height: 74px;
+    }
+  }
+  .footer-body {
+    width: 1200px;
+    padding: 32px 0 52px 0;
+    border-bottom: 1px solid rgb(231, 231, 231);
+    .qrcode {
+      display: inline-block;
+      width: 140px;
+      margin-right: 575px;
+      .qrcode-text {
+        font-size: 14px;
+        font-weight: 400;
+        color: rgb(0, 0, 0);
+      }
+      .qrcode-img {
+        display: inline-block;
+        width: 140px;
+        height: 140px;
+        margin-top: 27px;
+        background-image: url('../images/qrcode.jpg');
+        background-size: cover;
+        border: 1px solid rgb(231, 231, 231);
+      }
+    }
+    .texts {
+      display: inline-block;
+      width: 480px;
+      .text {
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 400;
+        color: rgb(0, 0, 0);
+        line-height: 46px;
+        vertical-align: bottom;
+      }
+    }
+  }
+  .footer-bottom {
+    text-align: center;
+    line-height: 98px;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(165, 165, 167);
+  }
+}

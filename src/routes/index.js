@@ -2,7 +2,7 @@
  * @Author: Kaiser
  * @Date: 2020-04-28 15:28:41
  * @Last Modified by: Kaiser
- * @Last Modified time: 2020-04-29 15:42:20
+ * @Last Modified time: 2020-05-06 13:59:57
  * @Description:
  */
 import React from 'react';
@@ -22,9 +22,9 @@ const routes = (
       <IndexRedirect to="/index" />
       <Route path="index" component={Index} />
       <Route path="product" component={Product} />
-      <Route path="about_us" component={AboutUs} />
-      <Route path="join_us" component={JoinUs} />
-      <Route path="contact_us" component={ContactUs} />
+      <Route path="aboutUs" component={AboutUs} />
+      <Route path="joinUs" component={JoinUs} />
+      <Route path="contactUs" component={ContactUs} />
     </Route>
     <Redirect from="*" to="/" />
   </Router>

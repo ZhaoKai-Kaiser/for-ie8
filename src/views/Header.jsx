@@ -1,133 +1,92 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Link, IndexLink } from 'react-router';
-import { Motion, spring } from 'react-motion';
+import { Link } from 'react-router';
+import Logo from './Logo';
 import '../style/header.scss';
-
-const keys = ['index', 'product', 'aboutUs', 'joinUs', 'contactUs'];
-
 class Header extends React.Component {
   constructor() {
     super();
     this.handleClick = this.handleClick.bind(this);
-    this.doms = [];
-    keys.forEach((key) => this.doms.push({ key }));
-    this.bar = {};
-  }
-  test() {
-    console.log('test');
+    this.currentIndex = 0;
+    this.keys = ['index', 'product', 'aboutUs', 'joinUs', 'contactUs'];
+    this.state = { name: this.keys[this.currentIndex] };
   }
   /**
    * 锚点点击事件
    */
-  handleClick(name) {
-    if (!name) {
-      return;
-    }
-    const target = this.getStyleByName(name);
-    // 样式不存在
-    if (!target || !target.style) {
-      return;
-    }
-    const { width, left } = target.style;
-    this.bar.width = width;
-    this.bar.left = left - 400;
-    console.log(this.bar);
-  }
-  /**
-   * 计算样式
-   */
-  computeStyle(name) {
-    const target = this.getStyleByName(name);
-    // 若不存在 or key 不存在 or 已计算样式
-    if (!target || !target.key || target.style) {
-      return;
-    }
-    // 未计算样式,重新计算
-    const dom = ReactDOM.findDOMNode(this[target.key]);
-    const style = dom.getClientRects();
-    const { width, left } = style[0];
-    // 样式暂存
-    target.style = { width, left };
+  handleClick(index) {
+    this.currentIndex = index;
+    this.setName();
   }
 
-  /**
-   * 通过名字获取dom数据
-   * @param {string} name
-   */
-  getStyleByName(name) {
-    return this.doms.find((dom) => dom.key === name);
+  setName() {
+    this.setState({
+      name: this.keys[this.currentIndex],
+    });
   }
+
   /**
    * 组件完成挂载
    */
   componentDidMount() {
-    keys.forEach((name) => this.computeStyle(name));
+    const { pathname } = this.props.location;
+    this.currentIndex = this.keys.findIndex(
+      (key) => key === pathname.replace('/', '')
+    );
+    this.setName();
   }
 
   render() {
     return (
       <div styleName="header">
         <div styleName="center">
-          <div styleName="logo">
-            <span styleName="icon"></span>
-            <span styleName="name">飞耕</span>
-          </div>
+          <Logo style={{ float: 'left' }} />
           <ul styleName="navigater">
-            <li styleName="navigater-item" onClickCapture={this.test}>
-              <IndexLink
-                ref={(event) => (this.index = event)}
-                onClickCapture={this.handleClick}
+            <li styleName="navigater-item">
+              <Link
+                onClickCapture={(event) => this.handleClick(0, event)}
                 to="/"
                 activeClassName="active"
               >
                 首页
-              </IndexLink>
+              </Link>
             </li>
-            <li styleName="navigater-item" onClickCapture={this.test}>
+            <li styleName="navigater-item">
               <Link
-                ref={(event) => (this.product = event)}
-                onClickCapture={this.handleClick}
+                onClickCapture={(event) => this.handleClick(1, event)}
                 to="/product"
                 activeClassName="active"
               >
                 产品特点
               </Link>
             </li>
-            <li styleName="navigater-item" onClickCapture={this.test}>
+            <li styleName="navigater-item">
               <Link
-                ref={(event) => (this.aboutUs = event)}
-                onClickCapture={this.handleClick}
-                to="/about_us"
+                onClickCapture={(event) => this.handleClick(2, event)}
+                to="/aboutUs"
                 activeClassName="active"
               >
                 关于我们
               </Link>
             </li>
-            <li styleName="navigater-item" onClickCapture={this.test}>
+            <li styleName="navigater-item">
               <Link
-                ref={(event) => (this.joinUs = event)}
-                onClickCapture={this.handleClick}
-                to="/join_us"
+                onClickCapture={(event) => this.handleClick(3, event)}
+                to="/joinUs"
                 activeClassName="active"
               >
                 加入我们
               </Link>
             </li>
-            <li styleName="navigater-item" onClickCapture={this.test}>
+            <li styleName="navigater-item">
               <Link
-                ref={(event) => (this.contactUs = event)}
-                onClickCapture={this.handleClick}
-                to="/contact_us"
+                onClickCapture={(event) => this.handleClick(4, event)}
+                to="/contactUs"
                 activeClassName="active"
               >
                 联系我们
               </Link>
             </li>
-            <span
-              styleName="bar"
-              style={{ left: this.bar.left, width: this.bar.width }}
-            ></span>
+            <span styleName={'bar ' + this.state.name}></span>
           </ul>
           <span styleName="login">请登录</span>
         </div>

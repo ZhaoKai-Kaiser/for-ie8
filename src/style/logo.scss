@@ -1,0 +1,39 @@
+/**
+ * @Author: Kaiser
+ * @Date: 2020-04-29 15:44:23
+ * @Last Modified by: Kaiser
+ * @Last Modified time: 2020-05-06 14:48:11
+ * @Description: header模块
+ */
+@import './mixin.scss';
+.logo {
+  display: table-cell;
+  width: 200px;
+  height: 74px;
+  vertical-align: middle;
+  margin-right: 200px;
+  text-decoration: none;
+  .icon {
+    display: inline-block;
+    width: 122px;
+    height: 24px;
+    line-height: 74px;
+    vertical-align: -4%;
+    background-image: url('../images/logo.png');
+    background-size: cover;
+  }
+  .name {
+    font-size: 24px;
+    line-height: 74px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    &::before {
+      display: inline-block;
+      content: '';
+      width: 1px;
+      height: 18px;
+      background: rgb(153, 153, 153);
+      margin: 0 10px 0 15px;
+    }
+  }
+}
