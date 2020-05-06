@@ -1,11 +1,12 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
+import Header from './common/Header';
+import Footer from './common/Footer';
+import '../style/index.scss';
 
 const App = (props) => (
-  <div className="global-container">
+  <div>
     <Header location={props.location} />
-    <div className="wrap">{props.children}</div>
+    <div styleName="body">{props.children}</div>
     <Footer />
   </div>
 );

@@ -1,5 +1,5 @@
 import React from 'react';
-import Demo from '../views/Demo';
+import Demo from './Demo';
 
 const Index = (props) => (
   <div className="content">
