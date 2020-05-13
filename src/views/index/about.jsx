@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from './../common/Icon';
+import Icon from '../common/Icon';
 import { next } from '../../utils/next';
 import '../../style/index/about.scss';
 
@@ -12,34 +12,46 @@ class About extends React.Component {
       animationOfLocation: 'hide',
       animationOfEstablish: 'hide',
     };
-    this.isShow = false;
+    this.scroll = this.scroll.bind(this);
   }
 
   async animate() {
-    await next(() => this.setState({ animationOfImg: 'bounce' }));
-    await next(() => this.setState({ animationOfSince: 'slideInDown' }));
-    await next(() => this.setState({ animationOfLocation: 'slideInLeft' }));
-    await next(() => this.setState({ animationOfEstablish: 'slideInLeft' }));
+    await this.setAnimation({ animationOfImg: 'bounce' });
+    await this.setAnimation({ animationOfSince: 'slideInDown' });
+    await this.setAnimation({ animationOfLocation: 'slideInLeft' });
+    await this.setAnimation({ animationOfEstablish: 'slideInLeft' });
+  }
+
+  setAnimation(obj) {
+    if (this.$isMounted) {
+      return next(() => this.setState(obj));
+    }
+  }
+
+  /**
+   * 滚动事件
+   */
+  scroll() {
+    const about = document.querySelector('#about');
+    // dom 不存在
+    if (!about) return;
+    const { top } = about.getBoundingClientRect();
+    // 未在显示区域出现
+    if (Math.abs(top) > window.innerHeight) return;
+    // 移除事件
+    window.removeEventListener('scroll', this.scroll);
+    // 开始动画
+    this.animate();
   }
 
   componentDidMount() {
-    this.animate();
-    const self = this;
-    window.addEventListener('scroll', scroll);
-    /**
-     * 滚动事件
-     */
-    function scroll() {
-      const about = document.querySelector('#about');
-      if (about && !self.isShow) {
-        const { top } = about.getBoundingClientRect();
-        if (top) {
-          self.isShow = true;
-          self.animate();
-          window.removeEventListener('scroll', scroll);
-        }
-      }
-    }
+    this.$isMounted = true;
+    window.addEventListener('scroll', this.scroll);
+  }
+
+  componentWillUnmount() {
+    this.$isMounted = false;
+    window.removeEventListener('scroll', this.scroll);
   }
 
   render() {

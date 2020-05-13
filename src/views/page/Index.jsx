@@ -1,10 +1,11 @@
 import React from 'react';
 
-import Banner from '../index/banner';
-import About from '../index/about';
-import Promise from '../index/promise';
-import Team from '../index/team';
-import Login from '../index/login';
+import Banner from '../index/Banner';
+import About from '../index/About';
+import Promise from '../index/Promise';
+import Team from '../index/Team';
+import Login from '../index/Login';
+
 import '../../style/index/index.scss';
 
 const Index = () => (
