@@ -2,7 +2,7 @@
  * @Author: Kaiser
  * @Date: 2020-04-28 15:28:41
  * @Last Modified by: Kaiser
- * @Last Modified time: 2020-05-06 19:26:45
+ * @Last Modified time: 2020-05-06 20:41:22
  * @Description:
  */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -58,7 +58,6 @@ module.exports = {
             'sass-loader',
           ],
         }),
-        exclude: /node_modules/,
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

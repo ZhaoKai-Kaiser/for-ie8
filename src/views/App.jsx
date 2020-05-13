@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './common/Header';
 import Footer from './common/Footer';
-import '../style/index.scss';
+import '../style/app.scss';
 
 const App = (props) => (
   <div>

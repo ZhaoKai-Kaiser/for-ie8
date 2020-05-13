@@ -1,0 +1,85 @@
+/**
+ * @Author: Kaiser
+ * @Date: 2020-05-12 14:09:35
+ * @Last Modified by: Kaiser
+ * @Last Modified time: 2020-05-12 14:43:49
+ * @Description: 首页 - 承诺模块
+ */
+@import '../mixin.scss';
+.promise {
+  width: 100%;
+  background-color: #f8f8f9;
+  padding: 84px 0 100px 0;
+}
+
+.top,
+.bottom {
+  @include module();
+}
+
+.top {
+  margin-bottom: 77px;
+  .title {
+    line-height: 1;
+    font-size: 30px;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    margin-bottom: 44px;
+  }
+  .detail {
+    line-height: 1;
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(102, 102, 102);
+  }
+}
+
+.bottom {
+  .item {
+    display: inline-block;
+    width: 350px;
+    margin-right: 74px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .image {
+    display: block;
+    width: 350px;
+    height: 260px;
+    background: #ccc;
+    &.image-2_1 {
+      background: url('../../images/index-2-1.png');
+    }
+    &.image-2_2 {
+      background: url('../../images/index-2-2.png');
+    }
+    &.image-2_3 {
+      background: url('../../images/index-2-3.png');
+    }
+  }
+  .title {
+    position: relative;
+    font-size: 22px;
+    font-weight: 500;
+    color: rgb(45, 45, 45);
+    margin: 55px 0 36px 0;
+    line-height: 1;
+    &::before {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: -24px;
+      width: 40px;
+      height: 2px;
+      background: rgb(200, 200, 200);
+      content: '';
+    }
+  }
+  .detail {
+    line-height: 1;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(102, 102, 102);
+  }
+}
