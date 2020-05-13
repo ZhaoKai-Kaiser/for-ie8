@@ -4,7 +4,7 @@ import Banner from '../index/banner';
 import About from '../index/about';
 import Promise from '../index/promise';
 import Team from '../index/team';
-import Demo from './Demo';
+import Login from '../index/login';
 import '../../style/index/index.scss';
 
 const Index = () => (
@@ -13,7 +13,7 @@ const Index = () => (
     <About />
     <Promise />
     <Team />
-    <Demo></Demo>
+    <Login/>
   </div>
 );
 

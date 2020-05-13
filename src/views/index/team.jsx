@@ -2,7 +2,7 @@ import React from 'react';
 import Icon from './../common/Icon';
 import '../../style/index/team.scss';
 
-class Promise extends React.Component {
+class Team extends React.Component {
   constructor() {
     super();
     this.style = {
@@ -14,7 +14,7 @@ class Promise extends React.Component {
   }
   render() {
     return (
-      <div styleName="promise">
+      <div styleName="team">
         <div styleName="top">
           <p styleName="title">飞耕批发团队</p>
           <p styleName="detail">
@@ -77,4 +77,4 @@ class Promise extends React.Component {
   }
 }
 
-export default Promise;
+export default Team;
