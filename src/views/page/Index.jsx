@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Banner from '../index/Banner';
-import About from '../index/About';
-import Promise from '../index/Promise';
-import Team from '../index/Team';
-import Login from '../index/Login';
+import Banner from '../components/index/Banner';
+import About from '../components/index/About';
+import Promise from '../components/index/Promise';
+import Team from '../components/index/Team';
+import Login from '../components/index/Login';
 
 import '../../style/index/index.scss';
 

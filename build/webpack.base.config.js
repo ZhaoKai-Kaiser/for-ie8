@@ -2,7 +2,7 @@
  * @Author: Kaiser
  * @Date: 2020-04-28 15:28:41
  * @Last Modified by: Kaiser
- * @Last Modified time: 2020-05-06 20:41:22
+ * @Last Modified time: 2020-05-13 16:11:45
  * @Description:
  */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -67,7 +67,7 @@ module.exports = {
             options: {
               limit: 8192,
               // name: utils.assetsPath('images/[name].[hash:7].[ext]'),
-              name: utils.assetsPath('images/[name].[ext]'),
+              name: utils.assetsPath('images/[path]/[name].[ext]'),
             },
           },
         ],

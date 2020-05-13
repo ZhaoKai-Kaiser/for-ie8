@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../style/index/promise.scss';
+import '../../../style/index/promise.scss';
 
 class Promise extends React.Component {
   render() {

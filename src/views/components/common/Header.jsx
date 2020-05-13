@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import Logo from './Logo';
-import '../../style/header.scss';
+import '../../../style/header.scss';
 class Header extends React.Component {
   constructor() {
     super();

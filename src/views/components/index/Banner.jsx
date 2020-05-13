@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../style/index/banner.scss';
+import '../../../style/index/banner.scss';
 
 class Banner extends React.Component {
   render() {

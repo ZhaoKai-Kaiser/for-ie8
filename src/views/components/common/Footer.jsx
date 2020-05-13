@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from './Logo';
-import '../../style/footer.scss';
+import '../../../style/footer.scss';
 
 class Header extends React.Component {
   constructor() {

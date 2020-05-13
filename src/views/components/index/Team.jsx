@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon from '../common/Icon';
-import '../../style/index/team.scss';
+import '../../../style/index/team.scss';
 
 class Team extends React.Component {
   constructor() {

@@ -2,7 +2,7 @@
  * @Author: Kaiser
  * @Date: 2020-05-12 14:09:35
  * @Last Modified by: Kaiser
- * @Last Modified time: 2020-05-13 11:40:11
+ * @Last Modified time: 2020-05-13 15:11:16
  * @Description: 首页 - 承诺模块
  */
 @import '../mixin.scss';
@@ -56,16 +56,16 @@
     background: #ccc;
     margin: 1px;
     &.image-3_1 {
-      background: url('../../images/index-3-1.png');
+      background: url('../../images/index/index-3-1.png');
     }
     &.image-3_2 {
-      background: url('../../images/index-3-2.png');
+      background: url('../../images/index/index-3-2.png');
     }
     &.image-3_3 {
-      background: url('../../images/index-3-3.png');
+      background: url('../../images/index/index-3-3.png');
     }
     &.image-3_4 {
-      background: url('../../images/index-3-4.png');
+      background: url('../../images/index/index-3-4.png');
     }
   }
   .item-content {

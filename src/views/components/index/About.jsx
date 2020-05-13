@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from '../common/Icon';
-import { next } from '../../utils/next';
-import '../../style/index/about.scss';
+import { next } from '../../../utils/next';
+import '../../../style/index/about.scss';
 
 class About extends React.Component {
   constructor() {
@@ -23,9 +23,7 @@ class About extends React.Component {
   }
 
   setAnimation(obj) {
-    if (this.$isMounted) {
-      return next(() => this.setState(obj));
-    }
+    return this.$isMounted && next(() => this.setState(obj));
   }
 
   /**
@@ -38,7 +36,7 @@ class About extends React.Component {
     const { top } = about.getBoundingClientRect();
     // 未在显示区域出现
     if (Math.abs(top) > window.innerHeight) return;
-    // 移除事件
+    // 移除事件监听
     window.removeEventListener('scroll', this.scroll);
     // 开始动画
     this.animate();
