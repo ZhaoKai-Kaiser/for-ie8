@@ -2,7 +2,7 @@
  * @Author: Kaiser
  * @Date: 2020-05-07 19:56:17
  * @Last Modified by: Kaiser
- * @Last Modified time: 2020-05-13 17:21:08
+ * @Last Modified time: 2020-05-13 17:20:37
  * @Description: 首页 - banner
  */
 @import '../mixin.scss';
@@ -11,7 +11,7 @@
   position: relative;
   min-width: 1200px;
   height: 480px;
-  @include module-image('../../images/product/banner.png');
+  @include module-image('../../images/join_us/banner.png');
   
   .box {
     position: absolute;

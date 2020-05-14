@@ -2,6 +2,11 @@ import React from 'react';
 import { Link } from 'react-router';
 import '../../../style/logo.scss';
 class Logo extends React.Component {
+  constructor({ classNameOfIcon = '', styleOfText = {} }) {
+    super();
+    this.classNameOfIcon = `icon ${classNameOfIcon}`;
+    this.styleOfText = styleOfText;
+  }
   render() {
     return (
       <Link
@@ -9,8 +14,10 @@ class Logo extends React.Component {
         style={this.props.style ? { ...this.props.style } : {}}
         styleName="logo"
       >
-        <span styleName="icon"></span>
-        <span styleName="name">飞耕</span>
+        <span styleName={this.classNameOfIcon}></span>
+        <span styleName="name" style={{ ...this.styleOfText }}>
+          飞耕
+        </span>
       </Link>
     );
   }

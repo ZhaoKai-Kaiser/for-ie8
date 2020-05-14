@@ -15,10 +15,11 @@ class Header extends React.Component {
    */
   handleClick(index) {
     this.currentIndex = index;
-    this.setName();
+    this.slideBar();
+    window.scrollTo(0, 0);
   }
 
-  setName() {
+  slideBar() {
     this.setState({
       name: this.keys[this.currentIndex],
     });
@@ -32,7 +33,7 @@ class Header extends React.Component {
     this.currentIndex = this.keys.findIndex(
       (key) => key === pathname.replace('/', '')
     );
-    this.setName();
+    this.slideBar();
   }
 
   render() {

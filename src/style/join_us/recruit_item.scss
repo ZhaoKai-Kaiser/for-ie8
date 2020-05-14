@@ -1,0 +1,49 @@
+/**
+ * @Author: Kaiser
+ * @Date: 2020-05-07 19:56:17
+ * @Last Modified by: Kaiser
+ * @Last Modified time: 2020-05-14 12:49:06
+ * @Description: 首页 - banner
+ */
+@import '../mixin.scss';
+
+.item {
+  position: relative;
+  width: 544px;
+  height: 143px;
+  background: rgba(255, 255, 255, 1);
+  padding: 25px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  .title {
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(1, 1, 1);
+    line-height: 1;
+    margin-bottom: 13px;
+  }
+
+  .des {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(102, 102, 102);
+    line-height: 1;
+    margin-bottom: 27px;
+  }
+
+  .see {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(177, 27, 26);
+    line-height: 1;
+  }
+
+  .icon {
+    position: absolute;
+    top: 22px;
+    right: 26px;
+    color: red;
+    font-size: 26px;
+  }
+}

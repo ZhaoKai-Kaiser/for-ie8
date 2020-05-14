@@ -2,7 +2,7 @@
  * @Author: Kaiser
  * @Date: 2020-04-28 15:28:41
  * @Last Modified by: Kaiser
- * @Last Modified time: 2020-05-07 20:38:23
+ * @Last Modified time: 2020-05-14 15:18:08
  * @Description: 
  */
 
@@ -35,4 +35,11 @@
   @include module;
   background: url($url) center;
   width: 100%;
+}
+
+@mixin center {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
 }

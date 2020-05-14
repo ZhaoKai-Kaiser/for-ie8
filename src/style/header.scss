@@ -2,7 +2,7 @@
  * @Author: Kaiser
  * @Date: 2020-04-29 15:44:23
  * @Last Modified by: Kaiser
- * @Last Modified time: 2020-05-13 11:43:51
+ * @Last Modified time: 2020-05-13 17:24:28
  * @Description: header模块
  */
 @import './mixin.scss';
@@ -74,11 +74,11 @@
     .login {
       float: right;
       width: 70px;
-      height: 32px;
+      height: 30px;
       background: rgb(255, 255, 255);
       border: 1px solid rgb(102, 102, 102);
       text-align: center;
-      line-height: 32px;
+      line-height: 30px;
       margin: 21px 0;
       cursor: pointer;
       &:hover {
