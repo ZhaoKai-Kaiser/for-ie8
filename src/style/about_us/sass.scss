@@ -1,0 +1,55 @@
+/**
+ * @Author: Kaiser
+ * @Date: 2020-05-12 14:09:35
+ * @Last Modified by: Kaiser
+ * @Last Modified time: 2020-05-15 13:05:09
+ * @Description: 首页 - 承诺模块
+ */
+@import '../mixin.scss';
+.sass {
+  width: 100%;
+  min-width: 1200px;
+  background-color: #fbfbfb;
+  padding: 123px 0 133px 0;
+}
+.box {
+  @include module();
+  text-align: center;
+}
+
+.title {
+  position: relative;
+  margin-bottom: 64px;
+  line-height: 1;
+  font-size: 30px;
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+
+  &::before {
+    position: absolute;
+    bottom: -19px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 40px;
+    height: 2px;
+    background: rgba(200, 200, 200, 1);
+    content: '';
+  }
+}
+.detail {
+  color: rgb(102, 102, 102);
+  margin-bottom: 28px;
+  line-height: 1;
+  font-size: 20px;
+  font-weight: 400;
+
+  &.url {
+    color: rgb(1, 1, 1);
+    margin-bottom: 19px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

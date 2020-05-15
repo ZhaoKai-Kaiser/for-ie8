@@ -1,0 +1,46 @@
+/**
+ * @Author: Kaiser
+ * @Date: 2020-05-07 19:56:17
+ * @Last Modified by: Kaiser
+ * @Last Modified time: 2020-05-15 11:11:18
+ * @Description: 首页 - banner
+ */
+@import '../mixin.scss';
+
+.banner {
+  position: relative;
+  min-width: 1200px;
+  height: 480px;
+  @include module-image('../../images/about_us/banner.png');
+  
+  .box {
+    position: absolute;
+    width: 1200px;
+    height: 480px;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
+    
+    .title {
+      position: absolute;
+      top: 220px;
+      left: 0;
+
+      font-style:italic;
+      font-size: 46px;
+      font-weight: 400;
+      color: rgb(1, 1, 1);
+      line-height: 48px;
+    }
+    .detail {
+      position: absolute;
+      top: 284px;
+      left: 0;
+
+      font-size: 16px;
+      font-weight: 500;
+      color: rgb(1, 1, 1);
+      line-height: 30px;
+    }
+  }
+}

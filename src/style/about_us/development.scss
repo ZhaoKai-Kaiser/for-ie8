@@ -1,0 +1,160 @@
+/**
+ * @Author: Kaiser
+ * @Date: 2020-05-12 14:09:35
+ * @Last Modified by: Kaiser
+ * @Last Modified time: 2020-05-15 14:44:24
+ * @Description: 首页 - 承诺模块
+ */
+@import '../mixin.scss';
+.development {
+  width: 100%;
+  min-width: 1200px;
+  background: #fbfbfb url('../../images/about_us/about_us-1.png') top center
+    no-repeat;
+  padding: 162px 0 78px 0;
+  overflow: hidden;
+}
+.box {
+  @include module();
+  text-align: center;
+  .title {
+    margin-bottom: 46px;
+
+    font-size: 32px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    line-height: 1;
+  }
+  .line {
+    position: relative;
+    margin: 0 auto 95px auto;
+    width: 728px;
+  }
+  .item {
+    display: inline-block;
+    text-align: center;
+    margin-right: 100px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .item-title {
+      width: 38px;
+      font-size: 16px;
+      font-weight: bold;
+      color: rgb(255, 255, 255);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .item-point {
+      position: relative;
+      margin: 0 auto;
+
+      width: 24px;
+      height: 24px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+
+      &::before {
+        position: absolute;
+        left: 24px;
+        bottom: 11px;
+
+        width: 114px;
+        height: 2px;
+        background: rgb(255, 255, 255);
+        opacity: 0.5;
+        content: '';
+      }
+
+      &.no-line {
+        &::before {
+          content: none;
+        }
+      }
+
+      &.on {
+        &::after {
+          display: block;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+
+          width: 18px;
+          height: 18px;
+          background: rgb(255, 255, 255);
+          border-radius: 50%;
+          content: '';
+        }
+      }
+    }
+  }
+
+  .course {
+    position: relative;
+    left: 0;
+    transition: left 0.5s ease-in-out;
+    
+    @include module();
+    padding: 51px 0 0 0;
+    white-space: nowrap;
+    overflow-x: visible;
+    // &::-webkit-scrollbar {
+    //   display: none; /* Chrome Safari */
+    // }
+    // scrollbar-width: none; /* firefox */
+    // -ms-overflow-style: none; /* IE 10+ */
+  }
+  .course-2019 {
+    left: 440px;
+  }
+  .course-2018 {
+    left: 230px;
+  }
+  .course-2016 {
+    left: 10px;
+  }
+  .course-2015 {
+    left: -210px;
+  }
+
+  .course-item {
+    display: inline-block;
+    margin-right: 56px;
+
+    width: 300px;
+    vertical-align: text-top;
+
+    .course-year {
+      margin-bottom: 20px;
+      text-align: left;
+      font-size: 28px;
+      font-weight: bold;
+      font-style: italic;
+      color: rgb(0, 0, 0);
+      padding-bottom: 13px;
+      border-bottom: solid 1px #d8d9dc;
+    }
+    .course-events {
+      text-align: left;
+      font-size: 18px;
+      font-weight: 500;
+      color: rgb(102, 102, 102);
+      line-height: 1;
+      .event-period {
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      .event-items {
+        display: inline-grid;
+      }
+      .event-item {
+        display: inline-block;
+        margin-bottom: 22px;
+      }
+    }
+  }
+}
