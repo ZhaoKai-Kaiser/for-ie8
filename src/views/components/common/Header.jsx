@@ -25,6 +25,10 @@ class Header extends React.Component {
     });
   }
 
+  login() {
+    location.href = 'https://shop.flygen.cn/';
+  }
+
   /**
    * 组件完成挂载
    */
@@ -89,7 +93,9 @@ class Header extends React.Component {
             </li>
             <span styleName={'bar ' + this.state.name}></span>
           </ul>
-          <span styleName="login">请登录</span>
+          <span styleName="login" onClick={this.login}>
+            请登录
+          </span>
         </div>
       </div>
     );

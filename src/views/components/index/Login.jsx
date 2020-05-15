@@ -16,7 +16,9 @@ class Login extends React.Component {
       <div styleName="login">
         <div styleName="box">
           <p styleName="title">私域流量平台开创者</p>
-          <a styleName="btn">立即登录</a>
+          <a styleName="btn" href="https://shop.flygen.cn/">
+            立即登录
+          </a>
         </div>
       </div>
     );
