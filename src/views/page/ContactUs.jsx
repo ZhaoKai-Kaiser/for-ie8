@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Banner from '../components/contact_us/Banner';
+import SASS from '../components/contact_us/Company';
 
 const About = (props) => (
-    <div className="content">
-      <p>关于我们</p>
-      
-    </div>
-  )
+  <div>
+    <Banner />
+    <SASS />
+  </div>
+);
 
-export default About
+export default About;
