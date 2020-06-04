@@ -2,7 +2,7 @@
  * @Author: Kaiser
  * @Date: 2020-05-12 14:09:35
  * @Last Modified by: Kaiser
- * @Last Modified time: 2020-05-12 14:43:49
+ * @Last Modified time: 2020-06-03 16:32:29
  * @Description: 首页 - 承诺模块
  */
 @import '../mixin.scss';
@@ -39,7 +39,7 @@
     display: inline-block;
     width: 350px;
     margin-right: 74px;
-    &:last-child {
+    &.no-margin-right {
       margin-right: 0;
     }
   }

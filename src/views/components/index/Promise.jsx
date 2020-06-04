@@ -20,7 +20,7 @@ class Promise extends React.Component {
             <p styleName="title">反对价格竞争</p>
             <p styleName="detail">反对价格竞争</p>
           </div>
-          <div styleName="item">
+          <div styleName="item no-margin-right">
             <span styleName={'image image-2_3'}></span>
             <p styleName="title">支持品牌商、总代理商做价格管控</p>
             <p styleName="detail">支持品牌商、总代理商做价格管控</p>

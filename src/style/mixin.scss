@@ -2,7 +2,7 @@
  * @Author: Kaiser
  * @Date: 2020-04-28 15:28:41
  * @Last Modified by: Kaiser
- * @Last Modified time: 2020-05-14 15:18:08
+ * @Last Modified time: 2020-06-04 09:44:10
  * @Description: 
  */
 
@@ -33,7 +33,7 @@
 // 模块样式 - 背景是颜色
 @mixin module-image($url) {
   @include module;
-  background: url($url) center;
+  background: url($url) center no-repeat;
   width: 100%;
 }
 

@@ -61,7 +61,7 @@ class Team extends React.Component {
               ></Icon>
             </div>
           </div>
-          <div styleName="item">
+          <div styleName="item no-margin-right">
             <span styleName={'image image-3_4'}></span>
             <div styleName="item-content">
               <p styleName="title">守 时</p>
