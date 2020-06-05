@@ -2,7 +2,7 @@
  * @Author: Kaiser
  * @Date: 2020-04-28 15:28:41
  * @Last Modified by: Kaiser
- * @Last Modified time: 2020-06-04 10:03:18
+ * @Last Modified time: 2020-06-05 11:55:37
  * @Description:
  */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -27,11 +27,6 @@ module.exports = {
   resolve: { extensions: ['.js', '.jsx'] },
   module: {
     rules: [
-      {
-        test: /.js$/,
-        enforce: 'post', // post-loader处理
-        loader: 'es3ify-loader',
-      },
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',
