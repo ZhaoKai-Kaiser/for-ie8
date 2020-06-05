@@ -22,6 +22,15 @@ class About extends React.Component {
     await this.setAnimation({ animationOfEstablish: 'slideInLeft' });
   }
 
+  animateForIE() {
+    this.setState({
+      animationOfImg: 'bounce',
+      animationOfSince: 'slideInDown',
+      animationOfLocation: 'slideInLeft',
+      animationOfEstablish: 'slideInLeft',
+    });
+  }
+
   setAnimation(obj) {
     return this.$isMounted && next(() => this.setState(obj));
   }
@@ -44,12 +53,18 @@ class About extends React.Component {
 
   componentDidMount() {
     this.$isMounted = true;
-    window.addEventListener('scroll', this.scroll);
+    if (window.addEventListener) {
+      window.addEventListener('scroll', this.scroll);
+    } else {
+      this.animateForIE();
+    }
   }
 
   componentWillUnmount() {
     this.$isMounted = false;
-    window.removeEventListener('scroll', this.scroll);
+    if (window.removeEventListener) {
+      window.removeEventListener('scroll', this.scroll);
+    }
   }
 
   render() {

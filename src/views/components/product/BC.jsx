@@ -19,6 +19,14 @@ class About extends React.Component {
     this.setAnimation({ animationOfWord: 'fadeInDown' });
   }
 
+  animateForIE() {
+    this.setState({
+      animationOfImg1: 'fadeInRight',
+      animationOfImg2: 'fadeInRight',
+      animationOfWord: 'fadeInDown',
+    });
+  }
+
   setAnimation(obj) {
     return this.$isMounted && next(() => this.setState(obj));
   }
@@ -41,12 +49,18 @@ class About extends React.Component {
 
   componentDidMount() {
     this.$isMounted = true;
-    window.addEventListener('scroll', this.scroll);
+    if (window.addEventListener) {
+      window.addEventListener('scroll', this.scroll);
+    } else {
+      this.animateForIE();
+    }
   }
 
   componentWillUnmount() {
     this.$isMounted = false;
-    window.removeEventListener('scroll', this.scroll);
+    if (window.removeEventListener) {
+      window.removeEventListener('scroll', this.scroll);
+    }
   }
 
   render() {

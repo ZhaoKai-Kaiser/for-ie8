@@ -16,7 +16,7 @@ class Team extends React.Component {
       <div styleName="sass">
         <div styleName="box">
           <p styleName="title">SAAS模式批发平台</p>
-          <p styleName="detail url">www.flygen.cn</p>
+          <p styleName="detail url">shop.flygen.cn</p>
           <p styleName="detail">
             SAAS是杭州秒算科技有限公司通过互联网技术为批发领域搭建的一套完成的基于
           </p>

@@ -86,9 +86,12 @@ class Components extends React.Component {
           <p styleName="item-title">{year.label}</p>
           <p
             styleName="item-point"
-            styleName={index + 1 === arr.length ? 'no-line' : ''}
             styleName={year.value === this.state.yearSelected ? 'on' : ''}
           ></p>
+          <span
+            styleName="item-line"
+            styleName={index + 1 === arr.length ? 'no-line' : ''}
+          ></span>
         </div>
       );
       if (year.value < 2020) {
