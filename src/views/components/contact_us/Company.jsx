@@ -16,10 +16,31 @@ class Components extends React.Component {
     this.initMap('map');
   }
 
+  // initMap(className) {
+  //   // 百度地图API功能
+  //   var map = new BMap.Map(className);
+  //   var point = new BMap.Point(120.143459,30.278834);
+  //   var marker = new BMap.Marker(point); // 创建标注
+  //   map.addOverlay(marker); // 将标注添加到地图中
+  //   map.centerAndZoom(point, 15);
+  //   var opts = {
+  //     width: 200, // 信息窗口宽度
+  //     height: 100, // 信息窗口高度
+  //     title: '杭州秒算科技有限公司', // 信息窗口标题
+  //   };
+  //   var infoWindow = new BMap.InfoWindow(
+  //     '地址：杭州市西湖区教工路18号欧美中心B座501室',
+  //     opts
+  //   ); // 创建信息窗口对象
+  //   marker.addEventListener('click', function () {
+  //     map.openInfoWindow(infoWindow, point); //开启信息窗口
+  //   });
+  // }
+
   initMap(className) {
     // 百度地图API功能
     var map = new BMap.Map(className);
-    var point = new BMap.Point(120.143459,30.278834);
+    var point = new BMap.Point(120.143459, 30.278834);
     var marker = new BMap.Marker(point); // 创建标注
     map.addOverlay(marker); // 将标注添加到地图中
     map.centerAndZoom(point, 15);
@@ -27,11 +48,13 @@ class Components extends React.Component {
       width: 200, // 信息窗口宽度
       height: 100, // 信息窗口高度
       title: '杭州秒算科技有限公司', // 信息窗口标题
+      enableMessage: true, //设置允许信息窗发送短息
     };
     var infoWindow = new BMap.InfoWindow(
       '地址：杭州市西湖区教工路18号欧美中心B座501室',
       opts
-    ); // 创建信息窗口对象
+    );
+    // 创建信息窗口对象
     marker.addEventListener('click', function () {
       map.openInfoWindow(infoWindow, point); //开启信息窗口
     });
