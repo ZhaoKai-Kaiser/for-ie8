@@ -6,7 +6,7 @@ class Banner extends React.Component {
     return (
       <div styleName="banner">
         <div styleName="box">
-          <a styleName="link" href="javascript:;"></a>
+          <a styleName="link" href="javascript:;">点击查看></a>
         </div>
       </div>
     );

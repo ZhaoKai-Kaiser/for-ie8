@@ -2,7 +2,7 @@
  * @Author: Kaiser
  * @Date: 2020-05-07 19:56:17
  * @Last Modified by: Kaiser
- * @Last Modified time: 2020-06-08 10:34:32
+ * @Last Modified time: 2020-06-08 11:40:25
  * @Description: 首页 - banner
  */
 @import '../mixin.scss';
@@ -20,10 +20,19 @@
     margin: 0 auto;
     .link {
       position: absolute;
-      top: 400px;
+      bottom: 200px;
       left: 0;
-      width: 300px;
-      height: 100px;
+      width: 248px;
+      height: 66px;
+      background: #b11b1a;
+      border-radius: 32px;
+
+      font-size: 32px;
+      font-weight: 400;
+      color: #fff;
+      line-height: 66px;
+      text-align: center;
+      text-decoration: none;
     }
   }
 }
