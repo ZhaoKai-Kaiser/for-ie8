@@ -1,10 +1,9 @@
 import React from 'react';
-const ReactDOM = require('react-dom');
 import Logo from '../common/Logo';
 import Icon from '../common/Icon';
 import '../../../style/join_us/job_mask.scss';
 
-class Component extends React.Component {
+export default class Component extends React.Component {
   constructor({ job = {}, container }) {
     super();
     this.job = job;
@@ -29,7 +28,11 @@ class Component extends React.Component {
    */
   handleClose() {
     document.body.style.overflow = 'auto';
-    this.container.remove();
+    if (this.container.remove) {
+      this.container.remove();
+    } else {
+      this.container.parentNode.removeChild(this.container);
+    }
   }
 
   getHTML(arr) {
@@ -81,18 +84,11 @@ class Component extends React.Component {
             {this.getHTML(this.job.jobResponsibilities)}
             <div styleName="bottom-line"></div>
             <p styleName="bottom-title">任职资格</p>
-            {this.getHTML(this.job.jobResponsibilities)}
+            {this.getHTML(this.job.qualifications)}
           </div>
+          <div styleName="empty"></div>
         </div>
       </div>
     );
-  }
-}
-
-export default class Mask {
-  constructor({ job }) {
-    const container = document.createElement('div');
-    ReactDOM.render(<Component job={job} container={container} />, container);
-    document.body.appendChild(container);
   }
 }

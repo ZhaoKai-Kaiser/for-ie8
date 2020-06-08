@@ -127,7 +127,7 @@ const JOBS = [
     // 联系电话
     contactNumber: '0571-85188250',
     // 工作职责/职位描述
-    jobResponsibilities: [],
+    jobResponsibilities: ['作为团队开发，参与公司相关项目的研发工作；'],
     // 招聘人数
     numberOfRecruiters: '3人',
     // 任职资格/岗位要求

@@ -4,6 +4,8 @@ import Icon from '../common/Icon';
 import Mask from './JobMask';
 import '../../../style/join_us/recruit_item.scss';
 
+const ReactDOM = require('react-dom');
+
 class Component extends React.Component {
   constructor(props) {
     super();
@@ -27,7 +29,9 @@ class Component extends React.Component {
    * 在dom中插入mask
    */
   handleClick() {
-    new Mask({ job: this.job });
+    const container = document.createElement('div');
+    ReactDOM.render(<Mask job={this.job} container={container} />, container);
+    document.body.appendChild(container);
   }
 
   render() {
